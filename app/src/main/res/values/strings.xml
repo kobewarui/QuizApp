@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">QuizApp</string>
+
+    <string name="true_button">True</string>
+    <string name="false_button">False</string>
+    <string name="initial_score">Score 0/13</string>
+
+
+    <string name="incorrect_toast">Wrong!</string>
+    <string name="correct_toast">You got it!</string>
+
+    <string name="question_1">Nairobi is the capital city of Kenya</string>
+    <string name="question_2">Lagos is the capital city of Nigeria.</string>
+    <string name="question_3">A spider has 4 legs.</string>
+    <string name="question_4">12 multiplied by 12 is 143.</string>
+    <string name="question_5">Entomology is the science that studies insects.</string>
+    <string name="question_6">Eritrea, which became the 182nd member of the UN in 1993, is in the continent of Europe.</string>
+    <string name="question_7">It is illegal to pee in the Ocean in Portugal.</string>
+    <string name="question_8">You can lead a cow down stairs but not up stairs.</string>
+    <string name="question_9">Google was originally called \"Backrub\".</string>
+    <string name="question_10">Galileo was an Italian astronomer who developed the telescope.</string>
+    <string name="question_11">Exposure to sunlight helps a person improve his health because the ultraviolet rays convert skin oil into Vitamin D.</string>
+    <string name="question_12">Cristiano Ronaldo plays for Barcelona Football club .</string>
+    <string name="question_13">pep Gardiola is the coach of Machester City football club.</string>
+    <string name="Goodbye">Thank you for Playing Goodbye :)</string>
+</resources>
