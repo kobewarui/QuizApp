@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -37,7 +38,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
             new TrueFalse(R.string.question_10, true),
             new TrueFalse(R.string.question_11, true),
             new TrueFalse(R.string.question_12, false),
-            new TrueFalse(R.string.question_13, true)
+            new TrueFalse(R.string.question_13, true),
+            new TrueFalse(R.string.goodbye)
+
     };
 
     @Override
@@ -66,43 +69,62 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.true_button:
                 mAnswer = true;
 
-                if (mQuestionBank[counter].isAnswer()) {
+                if (counter < 12 && mQuestionBank[counter].isAnswer() ) {
                     Toast.makeText(this, R.string.correct_toast, Toast.LENGTH_SHORT).show();
                     counter++;
+                    Log.d("counter",mQuestionBank.length+"");
                     score++;
 
 
                     mScore.setText("Score "+score+""+"/"+13+"");
                     mQuestionTextView.setText(mQuestionBank[counter].getQuestion());
 
-                } else {
+
+                } else if(counter < 12 && mQuestionBank[counter].isAnswer() == false ){
                     Toast.makeText(this, R.string.incorrect_toast, Toast.LENGTH_SHORT).show();
                     counter++;
-
+                    Log.d("counter",counter+"");
                     mQuestionTextView.setText(mQuestionBank[counter].getQuestion());
 
-                }
+                }else if(counter == 12){
+
+                mQuestionTextView.setText("Congratulations your score is "+score);
+                mTrue.setVisibility(View.GONE);
+                    mFalse.setVisibility(View.GONE);
+            }
 
 
                 break;
             case R.id.false_button:
                 mAnswer = false;
 
-                if (mQuestionBank[counter].isAnswer()) {
+                if (  counter < 12 && mQuestionBank[counter].isAnswer()  ) {
                     Toast.makeText(this, R.string.incorrect_toast, Toast.LENGTH_SHORT).show();
                     counter++;
-
+                    Log.d("counter",counter+"");
                     mQuestionTextView.setText(mQuestionBank[counter].getQuestion());
 
-                } else {
+                } else if(counter < 12 && mQuestionBank[counter].isAnswer() == false ){
                     Toast.makeText(this, R.string.correct_toast, Toast.LENGTH_SHORT).show();
                     counter++;
                     score++;
-
+                    Log.d("counter",counter+"");
                     mScore.setText("Score "+score+""+"/"+13+"");
+
                     mQuestionTextView.setText(mQuestionBank[counter].getQuestion());
 
                 }
+
+               else if(counter == 12){
+
+                    mQuestionTextView.setText("Congratulations your score is "+score);
+                    mFalse.setVisibility(View.GONE);
+                    mTrue.setVisibility(View.GONE);
+                }
+
+
+
+
 
                 break;
         }

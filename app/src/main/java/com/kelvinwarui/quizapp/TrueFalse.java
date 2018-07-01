@@ -20,4 +20,7 @@ public class TrueFalse {
         this.mAnswer = bool;
 
     }
+    public TrueFalse(int question ){
+        this.mQuestion = question ;
+    }
 }
